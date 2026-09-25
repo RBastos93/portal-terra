@@ -1,0 +1,272 @@
+:root {
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-primary: #2563eb;
+  --color-border: #e2e8f0;
+  --spacing: 1rem;
+  --radius: 0.5rem;
+  --max-width: 75rem;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+
+.cabecalho {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cabecalho__topo {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--spacing) * 1.5) var(--spacing);
+  text-align: center;
+}
+
+.cabecalho__logo {
+  color: var(--color-text);
+  font-size: 2rem;
+}
+
+.cabecalho__slogan {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Menu de categorias: os itens ficam lado a lado em uma linha (flex-row) */
+.menu-categorias {
+  border-top: 1px solid var(--color-border);
+}
+
+.menu-categorias__lista {
+  display: flex; /* Flexbox: alinha as categorias horizontalmente */
+  justify-content: flex-start; /* alinha os itens à esquerda, como no wireframe */
+  align-items: center; /* centraliza verticalmente os links na linha */
+  flex-wrap: wrap; /* permite quebrar em telas menores */
+  gap: calc(var(--spacing) * 2.5); /* espaçamento uniforme entre os links */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing);
+  list-style: none;
+}
+
+.menu-categorias__link {
+  color: var(--color-text);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-categorias__link:hover {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================================== */
+
+.conteudo-principal {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--spacing) * 1.5) var(--spacing);
+
+  /* Flexbox: empilha as seções em coluna com espaçamento entre elas */
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+/* ==========================================================================
+   NOTÍCIA EM DESTAQUE
+   ========================================================================== */
+
+.secao-destaque__rotulo {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  font-weight: normal;
+  margin-bottom: var(--spacing);
+}
+
+/*
+ * Cartão de destaque: imagem e conteúdo dispostos em linha (lado a lado).
+ * Em telas menores a linha quebra e os blocos passam a ficar em coluna.
+ */
+.noticia-destaque {
+  display: flex; /* Flexbox: imagem à esquerda, texto à direita */
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 1.5);
+  align-items: stretch; /* faz os dois blocos terem a mesma altura */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing) * 1.5);
+}
+
+.noticia-destaque__figura {
+  /* Ocupa parte da linha, mas com base mínima para não ficar estreita demais */
+  flex: 1 1 20rem;
+  margin: 0;
+}
+
+.noticia-destaque__imagem {
+  width: 100%;
+  height: 100%;
+  min-height: 15rem;
+  border-radius: var(--radius);
+  background-color: var(--color-border);
+}
+
+.noticia-destaque__legenda {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Conteúdo textual do destaque empilhado em coluna */
+.noticia-destaque__conteudo {
+  flex: 1 1 20rem;
+
+  display: flex; /* Flexbox: organiza os textos em coluna */
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente ao lado da imagem */
+  gap: 0.75rem;
+}
+
+.noticia-destaque__categoria {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.noticia-destaque__titulo {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.noticia-destaque__resumo {
+  color: var(--color-text);
+}
+
+.noticia-destaque__meta {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   EDITORIAS / ÚLTIMAS NOTÍCIAS
+   ========================================================================== */
+
+.secao-editorias__titulo {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--color-text);
+  margin-bottom: calc(var(--spacing) * 1.5);
+}
+
+/*
+ * Lista de notícias: os cartões são distribuídos em colunas na mesma linha.
+ * flex-wrap permite que quebrem para a linha de baixo em telas menores.
+ */
+.lista-noticias {
+  display: flex; /* Flexbox: cartões lado a lado em colunas */
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 1.5);
+}
+
+/*
+ * Cada cartão cresce igualmente (flex: 1) e tem base de 16rem, garantindo
+ * colunas de larguras semelhantes e distribuição equilibrada.
+ */
+.cartao-noticia {
+  flex: 1 1 16rem;
+
+  display: flex; /* Flexbox interno: imagem e conteúdo em linha */
+  gap: var(--spacing);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+}
+
+.cartao-noticia__figura {
+  flex: 0 0 6rem; /* largura fixa para a miniatura */
+  margin: 0;
+}
+
+.cartao-noticia__imagem {
+  width: 100%;
+  height: 100%;
+  min-height: 5rem;
+  border-radius: var(--radius);
+  background-color: var(--color-border);
+}
+
+/* Conteúdo do cartão empilhado em coluna */
+.cartao-noticia__conteudo {
+  flex: 1;
+
+  display: flex; /* Flexbox: textos do cartão em coluna */
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cartao-noticia__categoria {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.cartao-noticia__titulo {
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.cartao-noticia__resumo {
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+/* Empurra a data para a base do cartão, alinhando todas na mesma altura */
+.cartao-noticia__data {
+  margin-top: auto;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+
+.rodape {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.rodape__texto {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--spacing) * 1.5) var(--spacing);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}

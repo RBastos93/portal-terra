@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>IFC Portal Terra</title>
+    <link
+      rel="stylesheet"
+      href="./css/reset.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./css/global.css"
+    />
+  </head>
+
+  <body>
+    <!-- Cabeçalho: logotipo/título do portal + navegação -->
+    <header class="cabecalho">
+      <div class="cabecalho__topo">
+        <div class="cabecalho__marca">
+          <h1 class="cabecalho__logo">Portal Notícias</h1>
+          <p class="cabecalho__slogan">
+            Informação de qualidade para toda a comunidade
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu horizontal com as categorias do portal -->
+      <nav class="menu-categorias">
+        <ul class="menu-categorias__lista">
+          <li>
+            <a
+              href="#"
+              class="menu-categorias__link"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="menu-categorias__link"
+              >Tecnologia</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="menu-categorias__link"
+              >Campus</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="menu-categorias__link"
+              >Cultura e Lazer</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="conteudo-principal">
+      <!-- Seção da notícia em destaque -->
+      <section class="secao-destaque">
+        <h2 class="secao-destaque__rotulo">Notícia em destaque</h2>
+
+        <!-- Cartão em destaque: imagem à esquerda e texto à direita -->
+        <article class="noticia-destaque">
+          <figure class="noticia-destaque__figura">
+            <img
+              src="./img/destaque.jpg"
+              alt="Imagem principal da notícia em destaque"
+              class="noticia-destaque__imagem"
+            />
+            <figcaption class="noticia-destaque__legenda">
+              Legenda da imagem principal
+            </figcaption>
+          </figure>
+
+          <div class="noticia-destaque__conteudo">
+            <p class="noticia-destaque__categoria">Categoria da notícia</p>
+            <h3 class="noticia-destaque__titulo">
+              Título principal da notícia em destaque
+            </h3>
+            <p class="noticia-destaque__resumo">
+              Breve descrição da notícia em destaque, apresentando os principais
+              pontos abordados no texto completo. O objetivo é despertar o
+              interesse do leitor e convidá-lo a continuar a leitura.
+            </p>
+            <p class="noticia-destaque__meta">Autor • data • horário</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Seção de editorias com as últimas notícias em colunas -->
+      <section class="secao-editorias">
+        <h2 class="secao-editorias__titulo">Últimas notícias</h2>
+
+        <!-- Lista de cartões organizada em colunas com Flexbox -->
+        <div class="lista-noticias">
+          <article class="cartao-noticia">
+            <figure class="cartao-noticia__figura">
+              <img
+                src="./img/tecnologia.jpg"
+                alt="Imagem da notícia de tecnologia"
+                class="cartao-noticia__imagem"
+              />
+            </figure>
+            <div class="cartao-noticia__conteudo">
+              <p class="cartao-noticia__categoria">Tecnologia</p>
+              <h3 class="cartao-noticia__titulo">
+                Novidades em tecnologia chegam ao campus
+              </h3>
+              <p class="cartao-noticia__resumo">
+                Resumo breve sobre a notícia de tecnologia e seus impactos.
+              </p>
+              <p class="cartao-noticia__data">Data da notícia</p>
+            </div>
+          </article>
+
+          <article class="cartao-noticia">
+            <figure class="cartao-noticia__figura">
+              <img
+                src="./img/campus.jpg"
+                alt="Imagem da notícia do campus"
+                class="cartao-noticia__imagem"
+              />
+            </figure>
+            <div class="cartao-noticia__conteudo">
+              <p class="cartao-noticia__categoria">Campus</p>
+              <h3 class="cartao-noticia__titulo">
+                Eventos movimentam a comunidade acadêmica
+              </h3>
+              <p class="cartao-noticia__resumo">
+                Resumo breve sobre a notícia do campus e suas atividades.
+              </p>
+              <p class="cartao-noticia__data">Data da notícia</p>
+            </div>
+          </article>
+
+          <article class="cartao-noticia">
+            <figure class="cartao-noticia__figura">
+              <img
+                src="./img/cultura.jpg"
+                alt="Imagem da notícia de cultura e lazer"
+                class="cartao-noticia__imagem"
+              />
+            </figure>
+            <div class="cartao-noticia__conteudo">
+              <p class="cartao-noticia__categoria">Cultura e Lazer</p>
+              <h3 class="cartao-noticia__titulo">
+                Programação cultural agita o fim de semana
+              </h3>
+              <p class="cartao-noticia__resumo">
+                Resumo breve sobre a notícia de cultura e lazer da região.
+              </p>
+              <p class="cartao-noticia__data">Data da notícia</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé com informações do jornal -->
+    <footer class="rodape">
+      <p class="rodape__texto">
+        Portal Notícias • Redes de Computadores • 2026 • Autoria do estudante
+      </p>
+    </footer>
+  </body>
+</html>
